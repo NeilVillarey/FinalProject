@@ -45,7 +45,7 @@
                 <thead>
                     <tr>
                         <th scope="col">Product</th>
-                   
+                        <th scope="col">Quantity</th>
                         <th scope="col">Price</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
@@ -65,14 +65,14 @@
                           {%>
                     <tr>
                         <td><%=results.getString("website")%></td>
-                       
+                        <td><%=results.getString("id")%></td>
                         <td><%=results.getString("password")%></td>
                         <td><%	}
                     %>
                             <form method="get" action="edit.jsp">
                                 <input type="hidden" name="website"  value="<%=results.getString("website")%>">
                                 <input type="hidden" name="id"  value="<%=results.getString("id")%>">
-                                <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>
+                                <input type="hidden" name="username"  value=<%request.getAttribute("username");%>>
                                 <input type="hidden" name="password"  value="<%=results.getString("password")%>">
                                 <button type="submit" class="btn btn-outline-primary">Edit</button>
                             </form>

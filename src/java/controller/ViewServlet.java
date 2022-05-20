@@ -23,7 +23,15 @@ import model.Operations;
  */
 public class ViewServlet extends HttpServlet {
 
- 
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     Connection conn;
 
     public void init(ServletConfig config) throws ServletException {
@@ -82,11 +90,10 @@ public class ViewServlet extends HttpServlet {
             session.setAttribute("conn", conn);
             Operations view = new Operations();
             ResultSet records = view.viewTable(conn);
-            
+
             request.setAttribute("results", records);
-            request.getRequestDispatcher("index.jsp").forward(request, response);
+            request.getRequestDispatcher("viewTable.jsp").forward(request, response);
         } else {
-            System.out.println("Failed Connection");
             response.sendRedirect("error.jsp");
         }
     }

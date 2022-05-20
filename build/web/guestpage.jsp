@@ -26,7 +26,7 @@
     </head>
     <body class="background">
     <center><h1>Welcome Guest <%=request.getAttribute("username") %> !</h1></center>
- <a href="<%=request.getContextPath()%>/ViewC">Products</a>
+ <a href="<%=request.getContextPath()%>/ViewServlet">Cart</a>
       <a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a>
     </body>
 </html>

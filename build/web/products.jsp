@@ -104,10 +104,22 @@
 						    					<a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
 						    					<div class="text text-center pt-4">
 						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p>
-                                                                                                <form action="AddServlet" method="post">
+						    						<p><form action="AddServlet" method="post">
+                                                                                                    <input type="hidden" name="website"  value="Eco Bagg">
+                                                                                                    <input type="hidden" name="id"  value="de">
+                                                                                                    <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>
+                                                                                                    <input type="hidden" name="password"  value="eyyy">
+                                                                                                    
+                                                                                                <button type="submit" class="btn btn-primary btn-outline-primary">Add to Cart</button>
+                                                                                                </form></p>
+						    					</div>
+						    				</div>
+						        	</div>
+						        	<div class="col-md-3">
+						        		<div class="menu-entry">
+						    					<a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
+						    					<div class="text text-center pt-4">
+						    						<p><form action="AddServlet" method="post">
                                                                                                     <input type="hidden" name="website"  value="Eco Bagg">
                                                                                                     <input type="hidden" name="id"  value="de">
                                                                                                     <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>
@@ -120,23 +132,17 @@
 						        	</div>
 						        	<div class="col-md-3">
 						        		<div class="menu-entry">
-						    					<a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
-						    					<div class="text text-center pt-4">
-						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
-						    					</div>
-						    				</div>
-						        	</div>
-						        	<div class="col-md-3">
-						        		<div class="menu-entry">
 						    					<a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
 						    					<div class="text text-center pt-4">
 						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p>A small river named Duden flows by their place and supplies</p>
-						    						<p class="price"><span>$5.90</span></p>
-						    						<p><a href="cart.html" class="btn btn-primary btn-outline-primary">Add to Cart</a></p>
+                                                                                                <p><form action="AddServlet" method="post">
+                                                                                                    <input type="hidden" name="website"  value="Eco Bagg">
+                                                                                                    <input type="hidden" name="id"  value="de">
+                                                                                                    <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>
+                                                                                                    <input type="hidden" name="password"  value="reee">
+                                                                                                    
+                                                                                                <button type="submit" class="btn btn-primary btn-outline-primary">Add to Cart</button>
+                                                                                                </form></p>
 						    					</div>
 						    				</div>
 						        	</div>

@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <web-app version="2.5" xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
-    <servlet>
+<servlet>
         <servlet-name>ViewServlet</servlet-name>
         <servlet-class>controller.ViewServlet</servlet-class>
         <init-param>
@@ -31,7 +31,7 @@
             <param-name>databaseName</param-name>
             <param-value>OrdersDB</param-value>
         </init-param>
-    </servlet>
+    </servlet>   
     <servlet>
         <servlet-name>RegisterServlet</servlet-name>
         <servlet-class>controller.RegisterServlet</servlet-class>
@@ -58,7 +58,36 @@
     </servlet>
     <servlet>
         <servlet-name>AddServlet</servlet-name>
+        
         <servlet-class>controller.AddServlet</servlet-class>
+        <init-param>
+            <param-name>jdbcClassName</param-name>
+            <param-value>org.apache.derby.jdbc.ClientDriver</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbUserName</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPassword</param-name>
+            <param-value>app</param-value>
+        </init-param>
+        <init-param>
+            <param-name>jdbcDriverURL</param-name>
+            <param-value>jdbc:derby</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbHostName</param-name>
+            <param-value>localhost</param-value>
+        </init-param>
+        <init-param>
+            <param-name>dbPort</param-name>
+            <param-value>1527</param-value>
+        </init-param>
+        <init-param>
+            <param-name>databaseName</param-name>
+            <param-value>OrdersDB</param-value>
+        </init-param>
     </servlet>
     <servlet>
         <servlet-name>ConnectionServlet</servlet-name>
@@ -68,19 +97,12 @@
         <servlet-name>DeleteServlet</servlet-name>
         <servlet-class>controller.DeleteServlet</servlet-class>
     </servlet>
+
     <servlet>
         <servlet-name>EditServlet</servlet-name>
         <servlet-class>controller.EditServlet</servlet-class>
     </servlet>
-    <servlet>
-        <servlet-name>RedirectServlet</servlet-name>
-        <servlet-class>controller.RedirectServlet</servlet-class>
-    </servlet>
-    <servlet>
-        <servlet-name>ViewC</servlet-name>
-        <servlet-class>controller.ViewC</servlet-class>
-    </servlet>
-    <servlet-mapping>
+     <servlet-mapping>
         <servlet-name>ViewServlet</servlet-name>
         <url-pattern>/ViewServlet</url-pattern>
     </servlet-mapping>
@@ -112,17 +134,10 @@
         <servlet-name>DeleteServlet</servlet-name>
         <url-pattern>/DeleteServlet</url-pattern>
     </servlet-mapping>
+   
     <servlet-mapping>
         <servlet-name>EditServlet</servlet-name>
         <url-pattern>/EditServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>RedirectServlet</servlet-name>
-        <url-pattern>/RedirectServlet</url-pattern>
-    </servlet-mapping>
-    <servlet-mapping>
-        <servlet-name>ViewC</servlet-name>
-        <url-pattern>/ViewC</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
@@ -130,6 +145,6 @@
         </session-timeout>
     </session-config>
     <welcome-file-list>
-        <welcome-file>ViewServlet</welcome-file>
+        <welcome-file>index.jsp</welcome-file>
     </welcome-file-list>
 </web-app>

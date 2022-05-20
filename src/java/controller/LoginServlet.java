@@ -84,7 +84,7 @@ public class LoginServlet extends HttpServlet {
                     session.setAttribute("GUEST", username);
                     request.setAttribute("username", username);
                      session.setAttribute("username", username);       
-                    request.getRequestDispatcher("ViewServlet").forward(request, response);
+                    request.getRequestDispatcher("guestpage.jsp").forward(request, response);
                 } else {
                     System.out.println("Error message = " + userValidate);
                     request.setAttribute("errMessage", userValidate);

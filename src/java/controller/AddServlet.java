@@ -27,16 +27,35 @@ import model.Operations;
  * @author Lauren
  */
 public class AddServlet extends HttpServlet {
-
+  Connection conn;
     public void init(ServletConfig config) throws ServletException {
         super.init(config);
-        
+     try {
+            Class.forName(config.getInitParameter("jdbcClassName"));
+            //System.out.println("jdbcClassName: " + config.getInitParameter("jdbcClassName"));
+            String username = config.getInitParameter("dbUserName");
+            String password = config.getInitParameter("dbPassword");
+            StringBuffer url = new StringBuffer(config.getInitParameter("jdbcDriverURL"))
+                    .append("://")
+                    .append(config.getInitParameter("dbHostName"))
+                    .append(":")
+                    .append(config.getInitParameter("dbPort"))
+                    .append("/")
+                    .append(config.getInitParameter("databaseName"));
+            conn
+                    = DriverManager.getConnection(url.toString(), username, password);
+        } catch (SQLException sqle) {
+            System.out.println("SQLException error occured - "
+                    + sqle.getMessage());
+        } catch (ClassNotFoundException nfe) {
+            System.out.println("ClassNotFoundException error occured - "
+                    + nfe.getMessage());
+        }
     }
 
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
-        HttpSession session = request.getSession();
-        Connection conn = (Connection) session.getAttribute("conn");
+ 
         String website = request.getParameter("website");
         String id = request.getParameter("id");
         String username = request.getParameter("username");
@@ -51,21 +70,19 @@ public class AddServlet extends HttpServlet {
 //            response.sendRedirect(request.getContextPath() + "/sqlerror.jsp");
 //        }
         System.out.println("running addservlet");
-        try {
-            System.out.println("trying conn addservlet");
+        
             if (conn != null) {
-                System.out.println("trying conn addservlet");
+                   HttpSession session = request.getSession();
+            
+            session.setAttribute("conn", conn);
                 Operations add = new Operations();
                 add.addAcc(conn, website, id, username, password);
-                request.getRequestDispatcher("RedirectServlet").forward(request, response);
+                request.getRequestDispatcher("ViewServlet").forward(request, response);
             } else {
                 System.out.println("Connection null");
                 response.sendRedirect("error.jsp");
             }
-        } catch (SQLException sqle) {
-            System.out.println("SQL Error");
-            response.sendRedirect("sqlerror.jsp");
-        }
+        
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
