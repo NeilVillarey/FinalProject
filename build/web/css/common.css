@@ -1,0 +1,32 @@
+#footer{
+    min-height:100px!important;
+    background-color: #4da6ff;
+    margin-top: 85vh;
+}
+.signup .row{
+    margin-top:10px!important;
+    border-bottom:thin solid #4da6ff!important;
+    padding: 10px;
+}
+.signup>h1{
+    text-align: center;
+    color: #4da6ff;
+}
+.signup label{
+    color: #4da6ff
+}
+.box {
+  width: 30%;
+  height: 200px;
+  border: 5px dashed #f7a239;
+}
+
+.bg {
+  width: 55%;
+  height: 55%;
+}
+.center {
+border: 5px solid #FFFF00;
+padding: 50px 0;
+}
+
