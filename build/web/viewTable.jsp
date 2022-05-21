@@ -4,6 +4,10 @@
     Author     : user
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="java.util.ArrayList"%>
+<%@page import="java.text.DecimalFormat"%>
+<%@page import="model.Operations"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <%@ page import="java.sql.*" %>
 
@@ -49,6 +53,7 @@
                         <th scope="col">Price</th>
                         <th scope="col">Edit</th>
                         <th scope="col">Delete</th>
+                        <th scope="col">Total</th>
                     </tr>
                 </thead>
                 <tbody>
@@ -57,6 +62,7 @@
                        {%>
                     <%
                         ResultSet results = (ResultSet) request.getAttribute("results");
+                         int sum = 0;
                         while (results.next()) {%>
                     <%          String user=(String)session.getAttribute("username");
                     userNameDB = results.getString("username");
@@ -64,16 +70,17 @@
                      if(userNameDB.equals(session.getAttribute("username")) ){
                           {%>
                     <tr>
-                        <td><%=results.getString("website")%></td>
+                        <td><%=results.getString("product")%></td>
                         <td><%=results.getString("id")%></td>
-                        <td><%=results.getString("password")%></td>
+                        <td><%=results.getInt("price")%></td>
+                          <%sum +=results.getInt("price");%>     
                         <td><%	}
                     %>
                             <form method="get" action="edit.jsp">
-                                <input type="hidden" name="website"  value="<%=results.getString("website")%>">
+                                <input type="hidden" name="product"  value="<%=results.getString("product")%>">
                                 <input type="hidden" name="id"  value="<%=results.getString("id")%>">
                                 <input type="hidden" name="username"  value=<%request.getAttribute("username");%>>
-                                <input type="hidden" name="password"  value="<%=results.getString("password")%>">
+                                <input type="hidden" name="price"  value="<%=results.getInt("price")%>">
                                 <button type="submit" class="btn btn-outline-primary">Edit</button>
                             </form>
                         <td>
@@ -90,11 +97,13 @@
                     %>
                     <%	}
                     %>
+                    <td>Total price is :<%=sum%></td>
                     <%	}
                     %>
                 </tbody>
             </table>
         </div>
+              
         <br>
         <a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a>
         <a href="add.jsp">Add Person</a>

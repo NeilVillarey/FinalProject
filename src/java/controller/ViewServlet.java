@@ -8,6 +8,7 @@ package controller;
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.*;
+import java.util.ArrayList;
 import javax.servlet.ServletConfig;
 import javax.servlet.ServletContext;
 import javax.servlet.ServletException;
@@ -86,12 +87,12 @@ public class ViewServlet extends HttpServlet {
         if (conn != null) {
             System.out.println("Setting Connection");
             HttpSession session = request.getSession();
-            
+            String e = (String) session.getAttribute("username");
             session.setAttribute("conn", conn);
             Operations view = new Operations();
             ResultSet records = view.viewTable(conn);
-
             request.setAttribute("results", records);
+
             request.getRequestDispatcher("viewTable.jsp").forward(request, response);
         } else {
             response.sendRedirect("error.jsp");

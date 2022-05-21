@@ -5,6 +5,7 @@
  */
 package controller;
 
+
 import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
@@ -56,10 +57,10 @@ public class AddServlet extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException, SQLException {
  
-        String website = request.getParameter("website");
+        String PRODUCT = request.getParameter("PRODUCT");
         String id = request.getParameter("id");
         String username = request.getParameter("username");
-        String password = request.getParameter("password");
+        int PRICE = Integer.parseInt(request.getParameter("PRICE"));
         
 //        Operations addi = new Operations();
 //        boolean add = addi.addAcc(conn, website, id, username, password);
@@ -76,7 +77,7 @@ public class AddServlet extends HttpServlet {
             
             session.setAttribute("conn", conn);
                 Operations add = new Operations();
-                add.addAcc(conn, website, id, username, password);
+                add.addAcc(conn, PRODUCT, id, username, PRICE);
                 request.getRequestDispatcher("ViewServlet").forward(request, response);
             } else {
                 System.out.println("Connection null");

@@ -48,7 +48,7 @@ public class Operations {
     public static ResultSet viewTable(Connection conn) {
 
         try {
-            String query = "SELECT * FROM account_table";
+            String query = "SELECT * FROM PRODUCTS";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet records = ps.executeQuery();
             return records;
@@ -64,7 +64,7 @@ public class Operations {
         try {
             if (conn != null) {
                 String id = sId;
-                String query = "delete FROM account_table where id=?";
+                String query = "delete FROM PRODUCTS where id=?";
                 PreparedStatement ps = conn.prepareStatement(query);
                 ps.setString(1, id);
                 ps.executeUpdate();
@@ -76,22 +76,22 @@ public class Operations {
         }
     }
 
-    public void addAcc(Connection conn, String nWebsite, String nId, String nUsername, String nPassword) throws SQLException {
+    public void addAcc(Connection conn, String nPRODUCT, String nId, String nUsername, int nPRICE) throws SQLException {
 //        boolean add = false;
         System.out.println("Running add model");
         try {
             if (conn != null) {
-                String website = nWebsite;
+                String PRODUCT = nPRODUCT;
                 String id = nId;
                 String username = nUsername;
-                String password = nPassword;
-                String query = "INSERT INTO account_table(WEBSITE,ID,USERNAME,PASSWORD) VALUES(?,?,?,?)";
+                int PRICE = nPRICE;
+                String query = "INSERT INTO PRODUCTS(PRODUCT,ID,USERNAME,PRICE) VALUES(?,?,?,?)";
                 System.out.println("query made");
                 PreparedStatement ps = conn.prepareStatement(query);
-                ps.setString(1, website);
+                ps.setString(1, PRODUCT);
                 ps.setString(2, id);
                 ps.setString(3, username);
-                ps.setString(4, password);
+                ps.setInt(4, PRICE);
                 ps.executeUpdate();
 //                add = ps.executeUpdate() >= 1;
             } else {
@@ -104,17 +104,17 @@ public class Operations {
 //        return add;
     }
 
-    public static void editAcc(Connection conn, String eId, String ePassword) {
+    public static void editAcc(Connection conn, String eId, String ePRICE) {
         System.out.println("running edit");
         try {
             if (conn != null) {
-                String password = ePassword;
+                String PRICE = ePRICE;
                 String id = eId;
-                String query = "update account_table set password=? where id = ?";
+                String query = "update account_table set PRICE=? where id = ?";
                 System.out.println("query made");
                 PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-                ps.setString(1, password);
+                ps.setString(1, PRICE);
                 ps.setString(2, id);
                 ps.executeUpdate();
             } else {
@@ -125,25 +125,27 @@ public class Operations {
             System.out.println("SQL Error");
         }
     }
+    
+   
 
-//    public static double getTotalCartPrice(Connection conn, String sId) throws SQLException {
+//    public static double getTotalCartPrice(Connection conn, String susername) throws SQLException {
 //        double sum = 0;
 //        try {
 //            if (conn != null) {
 //
-//                String id = sId;
-//                String query = "select price from products where id=?";
+//                String username = susername;
+//                String query = "select PRICE from products where username=?";
 //                PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 //
 //                ps = conn.prepareStatement(query);
-//                 ps.setString(1, id);
+//                 ps.setString(1, username);
 //                ps.executeUpdate();
 //              
 //                 ResultSet rs = ps.executeQuery();
 //        
 //                while (rs.next()) {
-//                    sum += rs.getDouble("price");
-//
+//                    sum += rs.getDouble("PRICE");
+//   
 //                }
 //            }
 //
@@ -151,6 +153,9 @@ public class Operations {
 //            e.printStackTrace();
 //            System.out.println(e.getMessage());
 //        }
+//        System.out.println(sum);
 //        return sum;
+//       
 //    }
+    
 }
