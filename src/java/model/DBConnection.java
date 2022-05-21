@@ -11,7 +11,7 @@ public class DBConnection {
     public static Connection createConnection()
     {
     Connection con = null;
-    String url = "jdbc:derby://localhost:1527/MemberDB";
+    String url = "jdbc:derby://localhost:1527/OrdersDB";
     String username = "app";
     String password = "app";
  
