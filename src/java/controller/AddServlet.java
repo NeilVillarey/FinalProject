@@ -23,10 +23,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Operations;
 
-/**
- *
- * @author Lauren
- */
+
 public class AddServlet extends HttpServlet {
   Connection conn;
     public void init(ServletConfig config) throws ServletException {

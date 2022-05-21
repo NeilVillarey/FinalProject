@@ -66,7 +66,7 @@ public class LoginServlet extends HttpServlet {
                     session = request.getSession(); //Creating a session
                     session.setAttribute("ADMIN", username); //setting session attribute
                     request.setAttribute("username", username);
-
+                    session.setAttribute("username", username);
                     request.getRequestDispatcher("adminpage.jsp").forward(request, response);
                 } else if (userValidate.equals("Member_Role")) {
                     System.out.println("Member's Home");
@@ -74,7 +74,7 @@ public class LoginServlet extends HttpServlet {
                     session = request.getSession();
                     session.setAttribute("MEMBER", username);
                     request.setAttribute("username", username);
-
+                    session.setAttribute("username", username);
                     request.getRequestDispatcher("memberpage.jsp").forward(request, response);
                 } else if (userValidate.equals("Guest_Role")) {
                     System.out.println("Guest's Home");
@@ -83,7 +83,7 @@ public class LoginServlet extends HttpServlet {
                     session.setMaxInactiveInterval(10 * 60);
                     session.setAttribute("GUEST", username);
                     request.setAttribute("username", username);
-                     session.setAttribute("username", username);       
+                    session.setAttribute("username", username);
                     request.getRequestDispatcher("guestpage.jsp").forward(request, response);
                 } else {
                     System.out.println("Error message = " + userValidate);

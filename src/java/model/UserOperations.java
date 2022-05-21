@@ -13,8 +13,7 @@ import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 
-
-public class Operations {
+public class UserOperations {
 
     Connection conn;
 
@@ -45,7 +44,7 @@ public class Operations {
     public static ResultSet viewTable(Connection conn) {
 
         try {
-            String query = "SELECT * FROM PRODUCTS";
+            String query = "SELECT * FROM USERS";
             PreparedStatement ps = conn.prepareStatement(query);
             ResultSet records = ps.executeQuery();
             return records;
@@ -61,7 +60,7 @@ public class Operations {
         try {
             if (conn != null) {
                 String id = sId;
-                String query = "delete FROM PRODUCTS where id=?";
+                String query = "delete FROM USERS where id=?";
                 PreparedStatement ps = conn.prepareStatement(query);
                 ps.setString(1, id);
                 ps.executeUpdate();
@@ -73,22 +72,24 @@ public class Operations {
         }
     }
 
-    public void addAcc(Connection conn, String nPRODUCT, String nId, String nUsername, int nPRICE) throws SQLException {
+    public void addAcc(Connection conn, int nid, String nusername, String nfullname, String npassword, String nrole) throws SQLException {
 //        boolean add = false;
         System.out.println("Running add model");
         try {
             if (conn != null) {
-                String PRODUCT = nPRODUCT;
-                String id = nId;
-                String username = nUsername;
-                int PRICE = nPRICE;
-                String query = "INSERT INTO PRODUCTS(PRODUCT,ID,USERNAME,PRICE) VALUES(?,?,?,?)";
+                String fullname = nfullname;
+                int id = nid;
+                String username = nusername;
+                String password = npassword;
+                String role = nrole;
+                String query = "INSERT INTO USERS(ID,FULLNAME,USERNAME,PASSWORD,ROLE) VALUES(?,?,?,?,?)";
                 System.out.println("query made");
                 PreparedStatement ps = conn.prepareStatement(query);
-                ps.setString(1, PRODUCT);
-                ps.setString(2, id);
+                ps.setInt(1, id);
+                ps.setString(2, fullname);
                 ps.setString(3, username);
-                ps.setInt(4, PRICE);
+                ps.setString(3, password);
+                ps.setString(4, role);
                 ps.executeUpdate();
 //                add = ps.executeUpdate() >= 1;
             } else {
@@ -101,17 +102,17 @@ public class Operations {
 //        return add;
     }
 
-    public static void editAcc(Connection conn, String eId, String ePRICE) {
+    public static void editAcc(Connection conn, String eId, String ePASSWORD) {
         System.out.println("running edit");
         try {
             if (conn != null) {
-                String PRICE = ePRICE;
+                String PASSWORD = ePASSWORD;
                 String id = eId;
-                String query = "update account_table set PRICE=? where id = ?";
+                String query = "update account_table set PASSWORD=? where ID = ?";
                 System.out.println("query made");
                 PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-                ps.setString(1, PRICE);
+                ps.setString(1, PASSWORD);
                 ps.setString(2, id);
                 ps.executeUpdate();
             } else {
@@ -122,8 +123,6 @@ public class Operations {
             System.out.println("SQL Error");
         }
     }
-    
-   
 
 //    public static double getTotalCartPrice(Connection conn, String susername) throws SQLException {
 //        double sum = 0;
@@ -154,5 +153,4 @@ public class Operations {
 //        return sum;
 //       
 //    }
-    
 }

@@ -12,6 +12,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Sorry Members only !</h1>
+        <a href="mempayment.jsp" class="nav-link">Be a member</a>
     </body>
 </html>

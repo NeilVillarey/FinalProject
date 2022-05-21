@@ -16,10 +16,10 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Operations;
+import model.UserOperations;
 
 
-public class ViewServlet extends HttpServlet {
+public class ViewUserServlet extends HttpServlet {
 
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
@@ -86,11 +86,11 @@ public class ViewServlet extends HttpServlet {
             HttpSession session = request.getSession();
             String e = (String) session.getAttribute("username");
             session.setAttribute("conn", conn);
-            Operations view = new Operations();
-            ResultSet records = view.viewTable(conn);
+            UserOperations userv = new UserOperations();
+            ResultSet records = userv.viewTable(conn);
             request.setAttribute("results", records);
 
-            request.getRequestDispatcher("viewTable.jsp").forward(request, response);
+            request.getRequestDispatcher("userTable.jsp").forward(request, response);
         } else {
             response.sendRedirect("error.jsp");
         }

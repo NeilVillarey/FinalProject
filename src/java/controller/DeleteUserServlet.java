@@ -7,35 +7,40 @@ package controller;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.SQLException;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
-import model.Operations;
 
+/**
+ *
+ * @author user
+ */
+public class DeleteUserServlet extends HttpServlet {
 
-public class EditServlet extends HttpServlet {
-
+    /**
+     * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
+     * methods.
+     *
+     * @param request servlet request
+     * @param response servlet response
+     * @throws ServletException if a servlet-specific error occurs
+     * @throws IOException if an I/O error occurs
+     */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        HttpSession session = request.getSession();
-        Connection conn = (Connection) session.getAttribute("conn");
-      
-        String password = request.getParameter("password");
-        String id = request.getParameter("id");
-        System.out.println("id:" + id);
-
-        System.out.println("running editservlet");
-        if (conn != null) {
-            Operations edit = new Operations();
-            edit.editAcc(conn, id,password);
-            request.getRequestDispatcher("ViewServlet").forward(request, response);
-        } else {
-            System.out.println("Connection null");
-            response.sendRedirect("error.jsp");
+        response.setContentType("text/html;charset=UTF-8");
+        try (PrintWriter out = response.getWriter()) {
+            /* TODO output your page here. You may use following sample code. */
+            out.println("<!DOCTYPE html>");
+            out.println("<html>");
+            out.println("<head>");
+            out.println("<title>Servlet DeleteUserServlet</title>");            
+            out.println("</head>");
+            out.println("<body>");
+            out.println("<h1>Servlet DeleteUserServlet at " + request.getContextPath() + "</h1>");
+            out.println("</body>");
+            out.println("</html>");
         }
     }
 

@@ -57,7 +57,7 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <%String username = (String) session.getAttribute("GUEST");%>
+
                     <% String userNameDB = "";
                        {%>
                     <%

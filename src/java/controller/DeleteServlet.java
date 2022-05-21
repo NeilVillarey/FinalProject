@@ -25,10 +25,7 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import model.Operations;
 
-/**
- *
- * @author Lauren
- */
+
 public class DeleteServlet extends HttpServlet {
 
     public void init(ServletConfig config) throws ServletException {
