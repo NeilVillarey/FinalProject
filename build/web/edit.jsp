@@ -42,8 +42,8 @@
         <p class="h1">Edit</p>
         <form method="get" action="EditServlet">
             <div class="mb-3">
-                <label for="website" class="form-label">Website</label>
-                <input type="text" name="website" class="form-control" id="website"  value="<%=request.getParameter("website")%>"readonly>
+                <label for="website" class="form-label">Fullname</label>
+                <input type="text" name="website" class="form-control" id="website"  value="<%=request.getParameter("fullname")%>"readonly>
             </div>
             <div class="mb-3">
                 <label for="id" class="form-label">ID</label>
@@ -54,8 +54,8 @@
                 <input type="text" name="username" class="form-control" id="username"  value="<%=request.getParameter("username")%>"readonly>
             </div>
             <div class="mb-3">
-                <label for="password" class="form-label">Password</label>
-                <input type="text" name="password" class="form-control" id="password" required>
+                <label for="role" class="form-label">Role</label>
+                <input type="text" name="role" class="form-control" id="role" required>
             </div>
 
             <button type="submit" class="btn btn-outline-secondary">Save</button>
@@ -63,7 +63,7 @@
 
         </form>
         <br>
-        <a href="ViewServlet">Go back</a>
+        <a href="ViewUserServlet">Go back</a>
         <p class="footer"><%
             out.println(getServletContext().getInitParameter("footer"));
             %></p>

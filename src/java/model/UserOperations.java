@@ -102,17 +102,17 @@ public class UserOperations {
 //        return add;
     }
 
-    public static void editAcc(Connection conn, String eId, String ePASSWORD) {
+    public static void editAcc(Connection conn, String eId, String erole) {
         System.out.println("running edit");
         try {
             if (conn != null) {
-                String PASSWORD = ePASSWORD;
+                String role = erole;
                 String id = eId;
-                String query = "update account_table set PASSWORD=? where ID = ?";
+                String query = "update USERS set ROLE=? where ID = ?";
                 System.out.println("query made");
                 PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
 
-                ps.setString(1, PASSWORD);
+                ps.setString(1, role);
                 ps.setString(2, id);
                 ps.executeUpdate();
             } else {

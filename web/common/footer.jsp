@@ -15,36 +15,36 @@
           <div class="col-lg-3 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
               <h2 class="ftco-heading-2">About Us</h2>
-              <p><% out.println(getServletContext().getInitParameter("footer")); %></p>
+              <p>EcoHero provides products and goods that are eco-friendly and affordable.</p>
               <ul class="ftco-footer-social list-unstyled float-md-left float-lft mt-5">
-                <li class="ftco-animate"><a href="#"><span class="icon-twitter"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-facebook"></span></a></li>
-                <li class="ftco-animate"><a href="#"><span class="icon-instagram"></span></a></li>
+                <li class="ftco-animate"><a href="https://twitter.com/neilvillarey"><span class="icon-twitter"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.facebook.com/katrinanouvelle"><span class="icon-facebook"></span></a></li>
+                <li class="ftco-animate"><a href="https://www.instagram.com/iamanica27/ "><span class="icon-instagram"></span></a></li>
               </ul>
             </div>
           </div>
           <div class="col-lg-4 col-md-6 mb-5 mb-md-5">
             <div class="ftco-footer-widget mb-4">
-              <h2 class="ftco-heading-2">Recent Blog</h2>
+              <h2 class="ftco-heading-2">Recent Events</h2>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/220316132157-01-mariupol-drama-theatre-bombing-large-tease.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url('images/treeplant.jpg');"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="https://www.cnn.com/europe/live-news/ukraine-russia-putin-news-03-17-22/index.html">The UK says Moscow has used many of its modern precision arms and is now relying on less accurate bombs which cause indiscriminate destruction</a></h3>
+                  <h3 class="heading"><a href="https://www.youtube.com/watch?v=HPJKxAhLw5I">Help us on our journey to plant 20 million trees on planet earth.</a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> March 17, 2022</a></div>
+                    <div><a href="#"><span class="icon-calendar"></span> May 20, 2022</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 97</a></div>
                   </div>
                 </div>
               </div>
               <div class="block-21 mb-4 d-flex">
-                <a class="blog-img mr-4" style="background-image: url(https://cdn.cnn.com/cnnnext/dam/assets/220217132825-white-rabbit-ice-cream-large-tease.jpg);"></a>
+                <a class="blog-img mr-4" style="background-image: url('images/turtle.jpeg');"></a>
                 <div class="text">
-                  <h3 class="heading"><a href="https://edition.cnn.com/travel/article/white-rabbit-candy-china-intl-hnk/index.html">How Shanghai's White Rabbit candy became a globally beloved brand</a></h3>
+                  <h3 class="heading"><a href="https://edition.cnn.com/travel/article/white-rabbit-candy-china-intl-hnk/index.html">Let's save the turtles by cleaning up our beaches and reducing the waste on the ocean!.</a></h3>
                   <div class="meta">
-                    <div><a href="#"><span class="icon-calendar"></span> March 16, 2022</a></div>
+                    <div><a href="#"><span class="icon-calendar"></span> May 30, 2022</a></div>
                     <div><a href="#"><span class="icon-person"></span> Admin</a></div>
-                    <div><a href="#"><span class="icon-chat"></span> 19</a></div>
+                    <div><a href="#"><span class="icon-chat"></span> 12</a></div>
                   </div>
                 </div>
               </div>
@@ -52,12 +52,12 @@
           </div>
           <div class="col-lg-2 col-md-6 mb-5 mb-md-5">
              <div class="ftco-footer-widget mb-4 ml-md-4">
-              <h2 class="ftco-heading-2">Services</h2>
+              <h2 class="ftco-heading-2">Products</h2>
               <ul class="list-unstyled">
-                <li><a href="#" class="py-2 d-block">Cooked</a></li>
-                <li><a href="#" class="py-2 d-block">Deliver</a></li>
-                <li><a href="#" class="py-2 d-block">Quality Foods</a></li>
-                <li><a href="#" class="py-2 d-block">Mixed</a></li>
+                <li><a href="#" class="py-2 d-block">Green</a></li>
+                <li><a href="#" class="py-2 d-block">Clean</a></li>
+                <li><a href="#" class="py-2 d-block">Quality</a></li>
+                <li><a href="#" class="py-2 d-block">Durable</a></li>
               </ul>
             </div>
           </div>

@@ -29,35 +29,35 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-  	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
 	    <div class="container">
-	      <a class="navbar-brand" href="index.html">Coffee<small>Blend</small></a>
+	      <a class="navbar-brand" href="index.html">Eco<small>Hero</small></a>
 	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
 	        <span class="oi oi-menu"></span> Menu
 	      </button>
 	      <div class="collapse navbar-collapse" id="ftco-nav">
 	        <ul class="navbar-nav ml-auto">
-	          <li class="nav-item"><a href="index.html" class="nav-link">Home</a></li>
-	          <li class="nav-item"><a href="menu.html" class="nav-link">Menu</a></li>
-	          <li class="nav-item"><a href="services.html" class="nav-link">Services</a></li>
-	          <li class="nav-item"><a href="blog.html" class="nav-link">Blog</a></li>
-	          <li class="nav-item"><a href="about.html" class="nav-link">About</a></li>
+	          <li class="nav-item"><a href="products.jsp" class="nav-link">Home</a></li>
+	          
+	          <li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
+              
 	          <li class="nav-item dropdown">
               <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
               <div class="dropdown-menu" aria-labelledby="dropdown04">
-              	<a class="dropdown-item" href="shop.html">Shop</a>
-                <a class="dropdown-item" href="product-single.html">Single Product</a>
-                <a class="dropdown-item" href="cart.html">Cart</a>
-                <a class="dropdown-item" href="checkout.html">Checkout</a>
+              	<a class="dropdown-item" href="products.jsp">Shop</a>
+              
+                 <a class="dropdown-item" href="memberonly.jsp">Events</a>
+                <a class="dropdown-item" href="mempayment.jsp">Be a member</a>
               </div>
             </li>
-	          <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-	          <li class="nav-item cart"><a href="cart.html" class="nav-link"><span class="icon icon-shopping_cart"></span><span class="bag d-flex justify-content-center align-items-center"><small>1</small></span></a></li>
+	          <li class="nav-item"><a href="contacts.jsp" class="nav-link">Contact</a></li>
+	          
 	        </ul>
 	      </div>
 		  </div>
 	  </nav>
     <!-- END nav -->
+
 
     <section class="home-slider owl-carousel">
 
@@ -104,7 +104,7 @@
 						    					<a href="#" class="img" style="background-image: url(images/menu-1.jpg);"></a>
 						    					<div class="text text-center pt-4">
 						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-						    						<p><form action="AddServlet" method="post">
+						    						<p><form action="signup.jsp" >
                                                                                                     <input type="hidden" name="PRODUCT"  value="Eco Bagg">
                                                                                                     <input type="hidden" name="id"  value="de">
                                                                                                     <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>
@@ -119,7 +119,7 @@
 						        		<div class="menu-entry">
 						    					<a href="#" class="img" style="background-image: url(images/menu-2.jpg);"></a>
 						    					<div class="text text-center pt-4">
-						    						<p><form action="AddServlet" method="post">
+						    						<p><form action="signup.jsp" >
                                                                                                     <input type="hidden" name="PRODUCT"  value="Eco Bagg">
                                                                                                     <input type="hidden" name="id"  value="de">
                                                                                                     <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>
@@ -135,7 +135,7 @@
 						    					<a href="#" class="img" style="background-image: url(images/menu-3.jpg);"></a>
 						    					<div class="text text-center pt-4">
 						    						<h3><a href="product-single.html">Coffee Capuccino</a></h3>
-                                                                                                <p><form action="AddServlet" method="post">
+                                                                                                <p><form action="signup.jsp" >
                                                                                                     <input type="hidden" name="PRODUCT"  value="Eco Bagg">
                                                                                                     <input type="hidden" name="id"  value="de">
                                                                                                     <input type="hidden" name="username"  value=<%=session.getAttribute("username")%>>

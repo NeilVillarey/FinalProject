@@ -57,7 +57,7 @@
         </script> 
     </head>
     <body class="background">
-    <center><h2>Java Registration application </h2></center>
+    <center><h2>Sign Up now to Order! </h2></center>
     <div class="mask d-flex align-items-center h-100 gradient-custom-3">
         <div class="container h-100">
             <div class="row d-flex justify-content-center align-items-center h-100">
@@ -88,12 +88,8 @@
                                         <td>Role</td>
                                         <td>
 
-                                            <select name="role">
-                                                <option value="ADMIN">ADMIN</option>
-                                                <option value="GUEST">GUEST</option>
-
-                                            </select>
-
+                                           <input type="text" name="role" value="GUEST" readonly/>
+ 
                                         </td>
                                     </tr>
                                     <tr>
@@ -113,6 +109,15 @@
                                         <td></td>
                                         <td><input type="submit" value="Register"></input><input
                                                 type="reset" value="Reset"></input></td>
+                                    </tr>
+                                       <tr>
+                                    
+                                        <td>
+
+                                            <p>Already have an account?? </p>
+                                            <a href="login.jsp" >Log-In</a>
+ 
+                                        </td>
                                     </tr>
                                 </table>
                             </form>

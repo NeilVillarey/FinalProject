@@ -31,7 +31,33 @@
     <link rel="stylesheet" href="css/style.css">
   </head>
   <body>
-          <%@include file="common/header.jsp"%>
+   	<nav class="navbar navbar-expand-lg navbar-dark ftco_navbar bg-dark ftco-navbar-light" id="ftco-navbar">
+	    <div class="container">
+	      <a class="navbar-brand" href="index.html">Eco<small>Hero</small></a>
+	      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#ftco-nav" aria-controls="ftco-nav" aria-expanded="false" aria-label="Toggle navigation">
+	        <span class="oi oi-menu"></span> Menu
+	      </button>
+	      <div class="collapse navbar-collapse" id="ftco-nav">
+	        <ul class="navbar-nav ml-auto">
+	          <li class="nav-item"><a href="index.jsp" class="nav-link">Home</a></li>
+	          
+	          <li class="nav-item"><a href="about.jsp" class="nav-link">About</a></li>
+              
+	          <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="room.html" id="dropdown04" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Shop</a>
+              <div class="dropdown-menu" aria-labelledby="dropdown04">
+              	<a class="dropdown-item" href="products.jsp">Shop</a>
+              
+                 <a class="dropdown-item" href="memberonly.jsp">Events</a>
+                <a class="dropdown-item" href="mempayment.jsp">Be a member</a>
+              </div>
+            </li>
+	          <li class="nav-item"><a href="contacts.jsp" class="nav-link">Contact</a></li>
+	          
+	        </ul>
+	      </div>
+		  </div>
+	  </nav>
     <!-- END nav -->
 
     <section class="home-slider owl-carousel">
@@ -44,7 +70,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Eco friendly shop that helps revitalize the earth!</h1>
               <p class="mb-4 mb-md-5">Every purchase you make, Mother Earth recovers</p>
-              <p><a href="register.jsp" class="btn btn-primary p-3 px-xl-4 py-xl-3">Register to Order!</a> <a href="login.jsp" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Login?</a></p>
+              <p><a href="signup.jsp" class="btn btn-primary p-3 px-xl-4 py-xl-3">Register to Order!</a> <a href="login.jsp" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Login?</a></p>
             </div>
 
           </div>
@@ -60,7 +86,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Amazing Taste &amp; Beautiful Place</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="register.jsp" class="btn btn-primary p-3 px-xl-4 py-xl-3">Register to Order!</a> <a href="login.jsp" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Login</a></p>
+              <p><a href="signup.jsp" class="btn btn-primary p-3 px-xl-4 py-xl-3">Register to Order!</a> <a href="login.jsp" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Login</a></p>
             </div>
 
           </div>
@@ -76,7 +102,7 @@
             	<span class="subheading">Welcome</span>
               <h1 class="mb-4">Creamy Hot and Ready to Serve</h1>
               <p class="mb-4 mb-md-5">A small river named Duden flows by their place and supplies it with the necessary regelialia.</p>
-              <p><a href="register.jsp" class="btn btn-primary p-3 px-xl-4 py-xl-3">Register to Order!</a> <a href="login.jsp" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Login?</a></p>
+              <p><a href="signup.jsp" class="btn btn-primary p-3 px-xl-4 py-xl-3">Register to Order!</a> <a href="login.jsp" class="btn btn-white btn-outline-white p-3 px-xl-4 py-xl-3">Login?</a></p>
             </div>
 
           </div>
@@ -97,7 +123,7 @@
 	          	<span class="subheading">Discover</span>
 	            <h2 class="mb-4">Our Items</h2>
 	            <p class="mb-4">Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics, a large language ocean.</p>
-	            <p><a href="#" class="btn btn-primary btn-outline-primary px-4 py-3">View Full Menu</a></p>
+	            <p><a href="products.jsp" class="btn btn-primary btn-outline-primary px-4 py-3">View Products</a></p>
 	          </div>
     			</div>
     			<div class="col-md-6">

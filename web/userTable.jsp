@@ -70,13 +70,12 @@
                             <form method="get" action="edit.jsp">
                                   <input type="hidden" name="id"  value="<%=results.getInt("id")%>">
                                 <input type="hidden" name="fullname"  value="<%=results.getString("fullname")%>">
-                          
                                 <input type="hidden" name="username"  value="<%=results.getString("username")%>">
                                 <input type="hidden" name="role"  value="<%=results.getString("role")%>">
                                 <button type="submit" class="btn btn-outline-primary">Edit</button>
                             </form>
                         <td>
-                            <form method="get" action="${pageContext.request.contextPath}/DeleteServlet">
+                            <form method="get" action="${pageContext.request.contextPath}/DeleteUserServlet">
                                 <input type="hidden" name="id" value="<%=results.getInt("id")%>"> 
                                 <button type="submit" class="btn btn-outline-danger">Delete</button>    
                             </form>

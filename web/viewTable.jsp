@@ -59,23 +59,24 @@
                 <tbody>
 
                     <% String userNameDB = "";
-                       {%>
+                        {%>
                     <%
                         ResultSet results = (ResultSet) request.getAttribute("results");
-                         int sum = 0;
+                        int sum = 0;
                         while (results.next()) {%>
-                    <%          String user=(String)session.getAttribute("username");
-                    userNameDB = results.getString("username");
-                    request.setAttribute("testing", userNameDB);
-                     if(userNameDB.equals(session.getAttribute("username")) ){
-                          {%>
+                    <%          String user = (String) session.getAttribute("username");
+                        userNameDB = results.getString("username");
+                        request.setAttribute("testing", userNameDB);
+                        if (userNameDB.equals(session.getAttribute("username"))) {
+                            {%>
                     <tr>
                         <td><%=results.getString("product")%></td>
                         <td><%=results.getString("id")%></td>
                         <td><%=results.getInt("price")%></td>
-                          <%sum +=results.getInt("price");%>     
+                        <%sum += results.getInt("price");%>  
+
                         <td><%	}
-                    %>
+                            %>
                             <form method="get" action="edit.jsp">
                                 <input type="hidden" name="product"  value="<%=results.getString("product")%>">
                                 <input type="hidden" name="id"  value="<%=results.getString("id")%>">
@@ -95,15 +96,16 @@
                     </tr>	
                     <%	}
                     %>
-                    <%	}
+                    <%	}session.setAttribute("tsum", sum);
                     %>
-                    <td>Total price is :<%=sum%></td>
-                    <%	}
-                    %>
+                <td>Total price is :<%=sum%></td>
+            
+                <%	}
+                %>
                 </tbody>
             </table>
         </div>
-              
+
         <br>
         <a href="<%=request.getContextPath()%>/LogoutServlet">Logout</a>
         <a href="add.jsp">Add Person</a>

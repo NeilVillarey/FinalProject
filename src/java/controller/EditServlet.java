@@ -14,7 +14,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import model.Operations;
+import model.UserOperations;
 
 
 public class EditServlet extends HttpServlet {
@@ -24,15 +24,15 @@ public class EditServlet extends HttpServlet {
         HttpSession session = request.getSession();
         Connection conn = (Connection) session.getAttribute("conn");
       
-        String password = request.getParameter("password");
+        String role = request.getParameter("role");
         String id = request.getParameter("id");
         System.out.println("id:" + id);
 
         System.out.println("running editservlet");
         if (conn != null) {
-            Operations edit = new Operations();
-            edit.editAcc(conn, id,password);
-            request.getRequestDispatcher("ViewServlet").forward(request, response);
+            UserOperations edit = new UserOperations();
+            edit.editAcc(conn, id,role);
+            request.getRequestDispatcher("ViewUserServlet").forward(request, response);
         } else {
             System.out.println("Connection null");
             response.sendRedirect("error.jsp");

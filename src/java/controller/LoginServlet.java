@@ -65,8 +65,10 @@ public class LoginServlet extends HttpServlet {
 
                     session = request.getSession(); //Creating a session
                     session.setAttribute("ADMIN", username); //setting session attribute
+                    String role = "Admin";
                     request.setAttribute("username", username);
                     session.setAttribute("username", username);
+                    session.setAttribute("role", role);
                     request.getRequestDispatcher("adminpage.jsp").forward(request, response);
                 } else if (userValidate.equals("Member_Role")) {
                     System.out.println("Member's Home");

@@ -90,7 +90,7 @@ public class ViewServlet extends HttpServlet {
             ResultSet records = view.viewTable(conn);
             request.setAttribute("results", records);
 
-            request.getRequestDispatcher("viewTable.jsp").forward(request, response);
+            request.getRequestDispatcher("view.jsp").forward(request, response);
         } else {
             response.sendRedirect("error.jsp");
         }

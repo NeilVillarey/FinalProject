@@ -101,27 +101,27 @@ public class Operations {
 //        return add;
     }
 
-    public static void editAcc(Connection conn, String eId, String ePRICE) {
-        System.out.println("running edit");
-        try {
-            if (conn != null) {
-                String PRICE = ePRICE;
-                String id = eId;
-                String query = "update account_table set PRICE=? where id = ?";
-                System.out.println("query made");
-                PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
-
-                ps.setString(1, PRICE);
-                ps.setString(2, id);
-                ps.executeUpdate();
-            } else {
-                System.out.println("Conn is null");
-            }
-        } catch (SQLException sqle) {
-            sqle.printStackTrace();
-            System.out.println("SQL Error");
-        }
-    }
+//    public static void editAcc(Connection conn, String eId, String ePRICE) {
+//        System.out.println("running edit");
+//        try {
+//            if (conn != null) {
+//                String PRICE = ePRICE;
+//                String id = eId;
+//                String query = "update account_table set PRICE=? where id = ?";
+//                System.out.println("query made");
+//                PreparedStatement ps = conn.prepareStatement(query, ResultSet.TYPE_SCROLL_INSENSITIVE, ResultSet.CONCUR_READ_ONLY);
+//
+//                ps.setString(1, PRICE);
+//                ps.setString(2, id);
+//                ps.executeUpdate();
+//            } else {
+//                System.out.println("Conn is null");
+//            }
+//        } catch (SQLException sqle) {
+//            sqle.printStackTrace();
+//            System.out.println("SQL Error");
+//        }
+//    }
     
    
 
